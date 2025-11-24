@@ -24,7 +24,11 @@ class DatabaseSeeder extends Seeder
 
 
         //Ami Seeder osztály itt fel van sorolva, annak lefut a run() metódusa
-        $this->call([
+          $this->call([
+            SchoolclassSeeder::class,
+            SportSeeder::class,
+            StudentSeeder::class,
+            PlayingSportSeeder::class,
             UserSeeder::class,
         ]);
     }

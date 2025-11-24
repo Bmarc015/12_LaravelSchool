@@ -2,16 +2,26 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Student;
+use App\Models\Sport;
+use App\Models\PlayingSport;
 
-class PlayingsportSeeder extends Seeder
+class PlayingSportSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        //
+        $sports = Sport::pluck('id')->toArray();
+
+        foreach (Student::all() as $student) {
+            $randomSports = collect($sports)->random(rand(0,3));
+
+            foreach ($randomSports as $sportId) {
+                PlayingSport::create([
+                    'studentId' => $student->id,
+                    'sportId'   => $sportId,
+                ]);
+            }
+        }
     }
 }
