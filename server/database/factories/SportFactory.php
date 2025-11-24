@@ -9,9 +9,7 @@ class SportFactory extends Factory
     public function definition(): array
     {
         return [
-            'sportName' => $this->faker->randomElement([
-                'Foci', 'Kosárlabda', 'Röplabda', 'Úszás', 'Kézilabda', 'Asztalitenisz'
-            ]),
+        
         ];
     }
 }

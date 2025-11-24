@@ -11,8 +11,7 @@ class PlayingSportFactory extends Factory
     public function definition(): array
     {
         return [
-            'studentId' => Student::inRandomOrder()->value('id'),
-            'sportId'   => Sport::inRandomOrder()->value('id'),
+            
         ];
     }
 }
